@@ -1,0 +1,253 @@
+:root {
+    --color-azul-oscuro: #002d5b;
+    --color-white: #f1fbff;
+    --transition-speed: 0.3s;
+}
+
+/*Estilo de base*/
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--color-white);
+    overflow-x: hidden;
+}
+
+/*Clases de utilidad*/
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+/*Estilos para el menú de navegación*/
+.navbar {
+    padding: 0.8rem 1rem;
+    transition: background-color var(--transition-speed);
+}
+
+.navbar-nav {
+    gap: 1rem;
+}
+
+.navbar-dark .navbar-brand {
+    color: var(--color-white);
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.img-rideon {
+    width: 40px;
+    height: 40px;
+    margin-right: 0.5rem;
+    transition: transform var(--transition-speed);
+}
+
+.img-rideon:hover {
+    transform: scale(1.1);
+}
+
+.navbar-nav a {
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    font-weight: 500;
+    position: relative;
+}
+
+.navbar-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-white);
+    transition: width var(--transition-speed);
+}
+
+.navbar-nav a:hover::after {
+    width: 100%;
+}
+
+
+/*Estilos para el carrusel*/
+.carousel-item {
+    height: 100vh;
+    min-height: 300px;
+}
+
+.carousel-caption {
+    bottom: 50%;
+    transform: translateY(50%);
+    z-index: 2;
+    padding: 1rem;
+}
+
+.carousel-caption h5 {
+    font-size: clamp(1.5rem, 4vw, 2.8rem);
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+}
+
+.carousel-caption p {
+    width: min(90%, 600px);
+    margin: 0 auto;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.6;
+}
+
+.carousel-inner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.w-100 {
+    height: 100vh;
+    object-fit: cover;
+}
+
+
+/*Estilos para la sección de  cards*/
+.card {
+    height: 100%;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    transition: transform var(--transition-speed);
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    margin-bottom: 1rem;
+}
+
+.card-text {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.6;
+}
+
+
+/*Esrilos para el título de la sección de testimonios*/
+.h2-testimony, .h2-title, .h2-contact {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.rounded-circle {
+    transition: transform var(--transition-speed);
+}
+
+.rounded-circle:hover {
+    transform: scale(1.05);
+}
+
+/*Estilos para el formulario de contacto*/
+.form-contact {
+    background: var(--color-azul-oscuro);
+    padding: clamp(1rem, 5vw, 3rem);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.form-control {
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.img-contact {
+    width: 100%;
+    height: clamp(250px, 50vw, 450px);
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform var(--transition-speed);
+}
+
+.img-contact:hover {
+    transform: scale(1.02);
+}
+
+/*Footer Styles*/
+footer {
+    padding: 3rem 0;
+}
+
+.social-icons a {
+    transition: color var(--transition-speed);
+}
+
+.social-icons a:hover {
+    color: #007bff !important;
+}
+
+
+/* Optimización para dispositivos móviles de 0px a 576px */
+@media (max-width: 576px) {
+    .navbar-nav {
+        padding: 1rem 0;
+    }
+    
+    .carousel-caption {
+        padding: 0 1rem;
+        bottom: 30%;
+    }
+    
+    .form-contact {
+        margin-top: 2rem;
+    }
+    
+    footer {
+        text-align: center;
+    }
+    
+    .social-icons {
+        margin-top: 1rem;
+        justify-content: center;
+    }
+}
+
+
+/*Optimización para tablets de 577px a 991px*/
+@media (min-width: 577px) and (max-width: 991px) {
+    .carousel-caption {
+        bottom: 40%;
+    }
+    
+    .card {
+        margin-bottom: 2rem;
+    }
+}
+
+/*Estilos para impresión*/
+@media print {
+    .carousel-caption,
+    .form-contact,
+    .navbar-toggler {
+        display: none;
+    }
+}
