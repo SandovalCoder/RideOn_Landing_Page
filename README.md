@@ -1,3 +1,5 @@
+![image](https://github.com/user-attachments/assets/d51b11f0-0aab-470a-959b-f3d735aafe27)
+
 # RideOn Landing Page
 
 ## Descripción
